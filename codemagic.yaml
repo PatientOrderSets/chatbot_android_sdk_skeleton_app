@@ -1,9 +1,6 @@
 workflows:
   native-android:
     name: Native Android
-    environment:
-      vars:
-        JAVA_HOME: /usr/local/opt/openjdk@17
 
     scripts:
       - name: Install Java 17
@@ -11,7 +8,7 @@ workflows:
           echo java -version
           brew update
           brew install openjdk-17-jdk
-          export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+          export JAVA_HOME: /usr/local/opt/openjdk@17
       - name: Set Android SDK location
         script: | 
           java -version
