@@ -2,7 +2,12 @@ workflows:
   native-android:
     name: Native Android
     environment:
-      android: stable
+      android_signing:
+        - keystore_reference
+      groups:
+        - google_play
+      vars:
+        PACKAGE_NAME: "io.codemagic.sample.androidnative"
     instance_type: mac_mini_m1
     scripts:
       - name: Set Android SDK location
