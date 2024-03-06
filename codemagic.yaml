@@ -1,17 +1,19 @@
 workflows:
   native-android:
     name: Native Android
+    environment:
+      flutter: stable
     instance_type: mac_mini_m1
     scripts:
-      - name: Set Android SDK location
-        script: | 
-          echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
       - name: Install Java 17
         script: |
           echo $VERSION
           brew update
           brew install openjdk-17-jdk
           export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+      - name: Set Android SDK location
+        script: | 
+          echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
       - name: Build Android release
         script: | 
           chmod +x ./gradlew
