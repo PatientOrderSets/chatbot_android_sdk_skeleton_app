@@ -14,6 +14,9 @@ workflows:
           echo $JAVA_HOME
           echo $ANDROID_HOME
           java -version
+          grep -v "export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home" ~/.bash_profile > temp.txt && mv temp.txt ~/.bash_profile
+          echo "export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"" >> ~/.bash_profile
+          source ~/.bash_profile
           echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
           chmod +x ./gradlew
           ./gradlew assembleRelease -PversionCode=1 -PversionName=1.0.0
