@@ -9,7 +9,7 @@ workflows:
       - chmod +x ./gradlew
       - ./gradlew assembleRelease
     artifacts:
-      - app/build/outputs/apk/debug/*.apk
+      - app/build/outputs/apk/release/*.apk
     publishing:
       firebase:
         firebase_service_account: $FIREBASE_SERVICE_ACCOUNT
