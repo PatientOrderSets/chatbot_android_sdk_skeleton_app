@@ -14,12 +14,16 @@ workflows:
           echo $JAVA_HOME
           echo $ANDROID_HOME
           java -version
-          
-      - name: Set Android SDK location
-        script: | 
           echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
-      - name: Build Android release
-        script: | 
-          java -version
           chmod +x ./gradlew
           ./gradlew assembleRelease -PversionCode=1 -PversionName=1.0.0
+          
+          
+#      - name: Set Android SDK location
+#        script: | 
+#          echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
+#      - name: Build Android release
+#        script: | 
+#          java -version
+#          chmod +x ./gradlew
+#          ./gradlew assembleRelease -PversionCode=1 -PversionName=1.0.0
