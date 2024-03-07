@@ -9,7 +9,7 @@ workflows:
 
           brew update
           brew install openjdk@17
-          export JAVA_HOME="/usr/local/opt/openjdk@17"
+          export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
           export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
           echo $JAVA_HOME
           echo $ANDROID_HOME
