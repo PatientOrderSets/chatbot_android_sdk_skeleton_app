@@ -18,6 +18,13 @@ workflows:
           echo "export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"" >> ~/.bash_profile
           source ~/.bash_profile
           echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
+          echo 'export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"' >> ~/.zshrc
+          source ~/.zshrc
+          echo $JAVA_HOME
+          echo $ANDROID_HOME
+          echo $PATH
+          java -version
+          
           chmod +x ./gradlew
           ./gradlew assembleRelease -PversionCode=1 -PversionName=1.0.0
           
