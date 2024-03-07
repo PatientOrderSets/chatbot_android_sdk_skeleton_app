@@ -7,7 +7,7 @@ workflows:
       - firebase_credentials   
     scripts:
       - chmod +x ./gradlew
-      - ./gradlew assembleDebug
+      - ./gradlew assembleRelease
     artifacts:
       - app/build/outputs/apk/debug/*.apk
     publishing:
