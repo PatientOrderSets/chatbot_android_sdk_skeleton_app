@@ -9,7 +9,7 @@ workflows:
 
           brew update
           brew install openjdk-17-jdk
-          export JAVA_HOME: /usr/local/opt/openjdk@17
+          export JAVA_HOME="/usr/local/opt/openjdk@17"
           echo $JAVA_HOME
           echo $ANDROID_HOME
  #     - name: Set Android SDK location
