@@ -78,5 +78,6 @@ android {
         testImplementation(libs.junit)
         androidTestImplementation(libs.androidx.junit)
         androidTestImplementation(libs.androidx.espresso.core)
+        implementation("androidx.browser:browser:1.2.0")
     }
 }
