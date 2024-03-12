@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="32dp"
+    android:layout_marginHorizontal="64dp"
+    android:orientation="vertical"
+    android:paddingHorizontal="43dp">
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spinnerProjectType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="@color/black"
+        app:boxCornerRadiusBottomEnd="4dp"
+        app:boxCornerRadiusBottomStart="4dp"
+        app:boxCornerRadiusTopEnd="4dp"
+        app:boxCornerRadiusTopStart="4dp"
+        app:boxStrokeWidth="2dp"
+        android:entries="@array/project_types" />
+
+
+    <!-- TextFields for App ID, Origin, and Base URL -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutAppId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="14dp"
+        android:hint="App ID">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextAppId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutOrigin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="14dp"
+        android:hint="Origin">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextOrigin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutBaseUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="14dp"
+        android:hint="Base URL">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextBaseUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Dropdown for Language -->
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/spinnerLanguage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:entries="@array/languages"
+        android:paddingBottom="22dp"
+        android:spinnerMode="dialog" />
+
+    <!-- Save Button -->
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="120dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="32dp"
+        android:text="Save"
+        android:textColor="@color/white" />
+</LinearLayout>

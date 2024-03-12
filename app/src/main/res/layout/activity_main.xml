@@ -7,15 +7,39 @@
     android:fitsSystemWindows="true"
     android:background="@drawable/img"
     tools:context=".MainActivity">
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginBottom="20dp"
-        android:layout_marginStart="20dp"
-        app:backgroundTint="#ff074b9e"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="32dp"
+            android:contentDescription="@string/jjjjj"
+            app:backgroundTint="#ff074b9e"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:shapeAppearance="@style/ShapeAppearanceOverlay.MyApp.Button.Rounded"
+            app:srcCompat="@drawable/chat"
+
+            app:tint="@android:color/white" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/settingsButton"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_margin="32dp"
+            android:src="@drawable/settings"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
