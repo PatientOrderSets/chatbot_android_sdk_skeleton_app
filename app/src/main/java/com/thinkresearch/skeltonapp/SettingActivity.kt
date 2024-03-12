@@ -31,11 +31,10 @@ class SettingActivity : AppCompatActivity() {
 
 
         // Set up the adapter for project type spinner
-        val projectTypes = arrayOf("Regular", "Nova Scotia", "Other")
+        val projectTypes = arrayOf("Staging", "Nova Scotia", "Other")
         val projectAdapter = ArrayAdapter(this, R.layout.simple_spinner_dropdown_item, projectTypes)
         binding.spinnerProjectType.adapter = projectAdapter
 
-        // Set up the adapter for language spinner
         val languages = arrayOf("English", "French")
         val languageAdapter =
             ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, languages)

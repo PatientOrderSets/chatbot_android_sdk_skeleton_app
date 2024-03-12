@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.fab.setOnClickListener { view ->
             var bot = ChatBotSDK();
+
             bot.initialize(
                 appId!!,
                 baseUrl!!,

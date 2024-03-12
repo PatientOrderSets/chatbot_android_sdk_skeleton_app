@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="project_types">
-        <item>Regular</item>
+        <item>Staging</item>
         <item>Nova Scotia</item>
         <item>Other</item>
     </string-array>
