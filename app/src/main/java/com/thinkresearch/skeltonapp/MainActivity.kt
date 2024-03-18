@@ -3,6 +3,8 @@ package com.thinkresearch.skeltonapp
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -16,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
+    var isProcessing = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,16 +27,29 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.fab.setOnClickListener { view ->
-            var bot = ChatBotSDK();
 
-            bot.initialize(
-                appId!!,
-                baseUrl!!,
-                origin!!,
-                selectedLanguage!!,
-                this
-            )
-            bot.start(this);
+            if (!isProcessing) {
+                // Set the flag to true to indicate processing has started
+                isProcessing = true
+
+                // Initialize the ChatBotSDK
+                val bot = ChatBotSDK()
+                bot.initialize(
+                    appId!!,
+                    baseUrl!!,
+                    origin!!,
+                    selectedLanguage!!,
+                    this
+                )
+                bot.start(this)
+
+                // Listen for completion of the initialization and starting process
+                // If successful or failed, reset the flag to allow further clicks
+                // Adjust the delay time as needed depending on the initialization and starting process
+                Handler(Looper.getMainLooper()).postDelayed({
+                    isProcessing = false
+                }, 2000) // Delay of 2 seconds
+            }
         }
 
 
@@ -71,7 +87,7 @@ class MainActivity : AppCompatActivity() {
     var origin: String? = "test.ca.digital-front-door.stg.gcp.trchq.com"
     var baseUrl: String? = "test.ca.digital-front-door.stg.gcp.trchq.com"
     var selectedProjectType: String? = "";
-    var selectedLanguage: String? = "fr";
+    var selectedLanguage: String? = "en";
 
 
     companion object {
