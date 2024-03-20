@@ -29,9 +29,9 @@ dependencies {
 
 For a manual install, follow these steps:
 
-1. Download the latest SDK's AAR file from the [Releases section](#).
-2. Copy the AAR file to your project's `app/libs` directory.
-3. Add the following line in your module's `build.gradle`:
+1. Place the latest SDK's AAR file inside your project's `app/libs` directory. You can find the latest AAR file inside the `libs` folder of this project [app-release.aar](https://bitbucket.org/architech/think-research-android-skelton-app/src/main/app/libs/).
+
+2. Add the following line in your module's `build.gradle`:
 
 ```groovy
 dependencies {
@@ -39,7 +39,7 @@ dependencies {
 }
 ```
 
-4. Once you have updated your `build.gradle` file, sync your project by clicking on the "Sync Project With Gradle Files" button.
+3. Once you have updated your `build.gradle` file, sync your project by clicking on the "Sync Project With Gradle Files" button.
 
 ### Initialize the Chatbot SDK in the Skeleton App
 
@@ -61,4 +61,4 @@ The `initialize` method takes 5 parameters:
 
 Replace the parameters with your specific values accordingly. The available language codes are "en" for English and "fr" for French. Note that both `baseUrl` and `originUrl` should not include "https://" prefix.
 
-Now you're ready to integrate and use the Chatbot Android SDK in your application. Happy coding! 
+Now you're ready to integrate and use the Chatbot Android SDK in your application. Happy coding!
