@@ -29,7 +29,7 @@ dependencies {
 
 For a manual install, follow these steps:
 
-1. Place the latest SDK's AAR file inside your project's `app/libs` directory. You can find the latest AAR file inside the `libs` folder of this project [app-release.aar](https://bitbucket.org/architech/think-research-android-skelton-app/src/main/app/libs/).
+1. Place the latest SDK's AAR file inside your project's `app/libs` directory. You can find the latest AAR file inside the `libs` folder of this project <a href="https://bitbucket.org/architech/think-research-android-skelton-app/src/main/app/libs/" target="_blank">app-release.aar</a>.[app-release.aar].
 
 2. Add the following line in your module's `build.gradle`:
 
