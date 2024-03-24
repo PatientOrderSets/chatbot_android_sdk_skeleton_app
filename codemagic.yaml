@@ -4,7 +4,14 @@ workflows:
     environment:     # Define default or revision (e.g. r19c)
       java: 17.0.9      # Define default, or platform version (e.g. 11)
       groups:
-      - firebase_credentials   
+      - firebase_credentials
+    triggering:
+      events:
+        - push
+        - tag
+      tag_patterns:
+        - pattern: '*'
+          include: true
     scripts:
       - chmod +x ./gradlew
       - ./gradlew assembleRelease
