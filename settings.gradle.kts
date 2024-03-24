@@ -16,6 +16,11 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven {
+
+            url = uri("https://architech1.jfrog.io/artifactory/trc-messenger-gradle-dev-local")
+
+        }
     }
 }
 
