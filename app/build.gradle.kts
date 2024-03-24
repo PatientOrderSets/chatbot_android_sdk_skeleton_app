@@ -74,10 +74,12 @@ android {
         implementation(libs.androidx.constraintlayout)
         implementation(libs.androidx.navigation.fragment.ktx)
         implementation(libs.androidx.navigation.ui.ktx)
-        implementation(files("libs/ChatbotSdk_V1.3.2.aar"))
         testImplementation(libs.junit)
         androidTestImplementation(libs.androidx.junit)
         androidTestImplementation(libs.androidx.espresso.core)
+
+//        Latest AAR
+        implementation(files("libs/ChatbotSdk_V1.3.2.aar"))
 //        implementation(libs.messenger)
     }
 }
