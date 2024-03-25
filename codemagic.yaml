@@ -7,7 +7,6 @@ workflows:
       - firebase_credentials
     triggering:
       events:
-        - push
         - tag
       tag_patterns:
         - pattern: '*'
