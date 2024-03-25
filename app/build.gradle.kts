@@ -79,7 +79,7 @@ android {
         androidTestImplementation(libs.androidx.espresso.core)
 
 //        Latest AAR
-        implementation(files("libs/ChatbotSdk_V.aar"))
+        implementation(files("libs/ChatbotSdk_V1.0.0.aar"))
 //        implementation(libs.messenger)
     }
 }
