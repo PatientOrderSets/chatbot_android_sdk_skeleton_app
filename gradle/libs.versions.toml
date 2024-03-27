@@ -8,7 +8,7 @@ espressoCore = "3.5.1"
 appcompat = "1.6.1"
 material = "1.11.0"
 constraintlayout = "2.1.4"
-messenger = "1.1.42"
+messenger = "1.1.+"
 navigationFragmentKtx = "2.7.7"
 navigationUiKtx = "2.7.7"
 
