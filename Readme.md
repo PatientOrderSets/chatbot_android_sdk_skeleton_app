@@ -29,13 +29,13 @@ dependencies {
 
 For a manual install, follow these steps:
 
-1. Place the latest SDK's AAR file inside your project's `app/libs` directory. You can find the latest AAR file inside the `libs` folder of this project <a href="https://bitbucket.org/architech/think-research-android-skelton-app/src/main/app/libs/app-release.aar" target="_blank">app-release.aar</a>.
+1. Place the latest SDK's AAR file inside your project's `app/libs` directory. You can find the latest AAR file inside the `libs` folder of this project <a href="https://bitbucket.org/architech/think-research-android-skelton-app/src/main/app/libs/chatbot_v18.aar" target="_blank">chatbot_v18.aar</a>.
 
 2. Add the following line in your module's `build.gradle`:
 
 ```groovy
 dependencies {
-    implementation(files("libs/app-release.aar"))
+    implementation(files("libs/chatbot_v18.aar"))
 }
 ```
 
@@ -47,7 +47,6 @@ dependencies {
 ChatBotSDK bot = new ChatBotSDK();
 bot.initialize("**********",
                "*******************",
-               "*******************",
                "en", this);
 bot.start(this);
 ```
@@ -55,10 +54,9 @@ bot.start(this);
 The `initialize` method takes 5 parameters:
 1. `appID`
 2. `baseUrl`
-3. `originUrl`
 4. `languageCode`
 5. `Context`
 
-Replace the parameters with your specific values accordingly. The available language codes are "en" for English and "fr" for French. Note that both `baseUrl` and `originUrl` should not include "https://" prefix.
+Replace the parameters with your specific values accordingly. The available language codes are "en" for English and "fr" for French. Note that both `baseUrl` should not include "https://" prefix.
 
 Now you're ready to integrate and use the Chatbot Android SDK in your application. Happy coding!

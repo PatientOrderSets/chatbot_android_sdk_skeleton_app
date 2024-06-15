@@ -37,7 +37,6 @@ class MainActivity : AppCompatActivity() {
                 bot.initialize(
                     appId!!,
                     baseUrl!!,
-                    origin!!,
                     selectedLanguage!!,
                     this
                 )
@@ -69,7 +68,6 @@ class MainActivity : AppCompatActivity() {
 
 
                 appId = data?.getStringExtra("appId")
-                origin = data?.getStringExtra("origin")
                 baseUrl = data?.getStringExtra("baseUrl")
                 selectedProjectType = data?.getStringExtra("selectedProjectType")
                 selectedLanguage = data?.getStringExtra("selectedLanguage")
@@ -83,11 +81,10 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-    var appId: String? = "yB9BJmrcH3bM4CShtMKB5qrw";
-    var origin: String? = "test.ca.digital-front-door.stg.gcp.trchq.com"
-    var baseUrl: String? = "test.ca.digital-front-door.stg.gcp.trchq.com"
-    var selectedProjectType: String? = "";
-    var selectedLanguage: String? = "en";
+    private var appId: String? = "yB9BJmrcH3bM4CShtMKB5qrw";
+    private var baseUrl: String? = "test.ca.digital-front-door.stg.gcp.trchq.com"
+    private var selectedProjectType: String? = "";
+    private var selectedLanguage: String? = "en";
 
 
     companion object {

@@ -16,12 +16,10 @@ class SettingActivity : AppCompatActivity() {
 
     // Constants for regular project
     val regularAppID = "yB9BJmrcH3bM4CShtMKB5qrw"
-    val regularOrigin = "test.ca.digital-front-door.stg.gcp.trchq.com"
     val regularApiUrl = "test.ca.digital-front-door.stg.gcp.trchq.com"
 
     // Constants for Nova Scotia project
     val novScotiaAppID = "XnA6d2mEejaov78UETAzM5uj"
-    val novScotiaOrigin = "app-digitalfrontdoor-dev.apps.ext.novascotia.ca"
     val novScotiaApiUrl = "test.ca.one-stop-talk.sbx.gcp.trchq.com"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +35,7 @@ class SettingActivity : AppCompatActivity() {
 
         val languages = arrayOf("English", "French")
         val languageAdapter =
-            ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, languages)
+            ArrayAdapter(this, R.layout.simple_spinner_dropdown_item, languages)
 
 
         binding.spinnerLanguage.adapter = languageAdapter
@@ -55,14 +53,12 @@ class SettingActivity : AppCompatActivity() {
                         0 -> {
                             // Regular selected
                             binding.editTextAppId.setText(regularAppID)
-                            binding.editTextOrigin.setText(regularOrigin)
                             binding.editTextBaseUrl.setText(regularApiUrl)
                         }
 
                         1 -> {
                             // Nova Scotia selected
                             binding.editTextAppId.setText(novScotiaAppID)
-                            binding.editTextOrigin.setText(novScotiaOrigin)
                             binding.editTextBaseUrl.setText(novScotiaApiUrl)
                         }
 
