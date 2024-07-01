@@ -3,8 +3,8 @@ workflows:
     name: Android app # workflow name
     environment:     # Define default or revision (e.g. r19c)
       java: 17.0.9      # Define default, or platform version (e.g. 11)
-      groups:
-      - firebase_credentials
+      # groups:
+      # - firebase_credentials
     triggering:
       events:
         - tag
@@ -16,51 +16,11 @@ workflows:
       - ./gradlew assembleRelease
     artifacts:
       - app/build/outputs/apk/release/*.apk
-    publishing:
-      firebase:
-        firebase_service_account: $FIREBASE_SERVICE_ACCOUNT
-        android:
-          app_id: 1:930216494956:android:5febe53ee6f0eeb4155549  
-          groups:
-            - androidTesters
-          artifact_type: 'apk' # Replace with 'aab' to only publish the Android app bundle
-
-#workflows:
-##  native-android:
-#    name: Native Android
-
-#    scripts:
-#      - name: Install Java 17
-#        script: |
-#          echo $JAVA_HOME
-
-#          brew update
-#          brew install openjdk@17
-#          export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
-#          export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
-#          echo $JAVA_HOME
-#          echo $ANDROID_HOME
-#          java -version
-#          grep -v "export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home" ~/.bash_profile > temp.txt && mv temp.txt ~/.bash_profile
-#          echo "export JAVA_HOME="/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"" >> ~/.bash_profile
-#          source ~/.bash_profile
-#          echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
-#          echo 'export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"' >> ~/.zshrc
-##          source ~/.zshrc
- #         echo $JAVA_HOME
- #         echo $ANDROID_HOME
- #         echo $PATH
- #         java -version
-          
- #         chmod +x ./gradlew
- #         ./gradlew assembleRelease -PversionCode=1 -PversionName=1.0.0
-          
-          
-#      - name: Set Android SDK location
-#        script: | 
-#          echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/local.properties"
-#      - name: Build Android release
-#        script: | 
-#          java -version
-#          chmod +x ./gradlew
-#          ./gradlew assembleRelease -PversionCode=1 -PversionName=1.0.0
+    # publishing:
+    #   firebase:
+    #     firebase_service_account: $FIREBASE_SERVICE_ACCOUNT
+    #     android:
+    #       app_id: 1:930216494956:android:5febe53ee6f0eeb4155549  
+    #       groups:
+    #         - androidTesters
+    #       artifact_type: 'apk' # Replace with 'aab' to only publish the Android app bundle 
