@@ -13,19 +13,7 @@ To use the Chatbot Android SDK, you have two options: automatic installation usi
 **Minimum SDK**: 24  
 **Supported architectures**: arm64-v8a, armeabi-v7a, x86_64
 
-#### Option A: Install using Android Studio and Gradle (Recommended)
-
-1. Add the following configuration to your app `build.gradle` file:
-
-```groovy
-dependencies {
-    implementation 'com.thinkresearch.chatbot:1.1.2’
-}
-```
-
-2. Once you have updated your `build.gradle` file, sync your project by clicking on the "Sync Project With Gradle Files" button.
-
-#### Option B: Manual Install
+#### Installation
 
 For a manual install, follow these steps:
 

@@ -2,7 +2,7 @@ workflows:
   android-app:
     name: Android app
     environment:    
-      java: 11
+      java: 17.0.9
       # groups:
       # - firebase_credentials
     triggering:
