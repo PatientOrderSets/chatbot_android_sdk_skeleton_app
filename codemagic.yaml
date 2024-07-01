@@ -1,8 +1,8 @@
 workflows:
-  android-app: # workflow ID
-    name: Android app # workflow name
-    environment:     # Define default or revision (e.g. r19c)
-      java: 17.0.9      # Define default, or platform version (e.g. 11)
+  android-app:
+    name: Android app
+    environment:    
+      java: 11
       # groups:
       # - firebase_credentials
     triggering:
