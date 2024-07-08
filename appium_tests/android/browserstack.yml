@@ -1,5 +1,5 @@
-userName: balajiabiraman_dhEuiL
-accessKey: f8xXkagrkJzDBMDi1bJQ
+userName: $userName
+accessKey: $accessKey
 framework: python
 app: bs://4faaea983438523296d9b63baed87aef5b59b11f
 platforms:
