@@ -1,0 +1,15 @@
+userName: balajiabiraman_dhEuiL
+accessKey: f8xXkagrkJzDBMDi1bJQ
+framework: python
+app: bs://4faaea983438523296d9b63baed87aef5b59b11f
+platforms:
+  - platformName: android
+    deviceName: Samsung Galaxy S22 Ultra
+    platformVersion: "12.0"
+interactiveDebugging : true
+browserstackLocal: false
+buildName: trc-skeleton-android
+projectName: TRC Skeleton
+buildIdentifier: ${BUILD_NUMBER}
+debug: true
+networkLogs: true
