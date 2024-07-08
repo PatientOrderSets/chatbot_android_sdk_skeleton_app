@@ -18,7 +18,7 @@ workflows:
         script: |
           response=$(curl -u "balajiabiraman_dhEuiL:f8xXkagrkJzDBMDi1bJQ" \
           -X POST "https://api-cloud.browserstack.com/app-automate/upload" \
-          -F "file=@./appium_tests/android/Skelton App Final.apk" \
+          -F "file=@app/build/outputs/apk/release/*.apk" \
           -F "custom_id=trc-skeleton-app") 
           echo "export APP_URL=$(echo $response | jq -r '.app_url')" > app_url.sh
           echo $response > temp.sh
