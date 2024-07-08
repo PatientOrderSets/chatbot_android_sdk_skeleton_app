@@ -8,7 +8,7 @@ capabilities = dict(
     deviceName='Android',
     language='en',
     locale='US',
-    app='C:\\Users\\EimantasMacius\\code\\think-research-android-skelton-app\\appium_tests\\android\\Skelton App Final.apk',
+    app='app/build/outputs/apk/release/*.apk',
 )
 
 
