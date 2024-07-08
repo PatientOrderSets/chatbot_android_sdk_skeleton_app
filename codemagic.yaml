@@ -14,9 +14,6 @@ workflows:
     scripts:
       - chmod +x ./gradlew
       - ./gradlew assembleRelease
-    artifacts:
-      - app/build/outputs/apk/release/*.apk
-    brouser-scripts:
       - name: MANUAL Upload APK to BrowserStack
         script: |
           response=$(curl -u "balajiabiraman_dhEuiL:f8xXkagrkJzDBMDi1bJQ" \
@@ -25,12 +22,18 @@ workflows:
           -F "custom_id=trc-skeleton-app") 
           echo "export APP_URL=$(echo $response | jq -r '.app_url')" > app_url.sh
           echo $response > temp.sh
-
       - name: Install BrowserStack SDK and Run Tests
         script: |
           cd ./appium_tests/android
           pip install browserstack-sdk
           browserstack-sdk pytest pytest_main.py
+          
+    artifacts:
+      - app/build/outputs/apk/release/*.apk
+   
+      
+
+      
     # publishing:
     #   firebase:
     #     firebase_service_account: $FIREBASE_SERVICE_ACCOUNT
