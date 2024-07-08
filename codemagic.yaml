@@ -16,7 +16,7 @@ workflows:
       - ./gradlew assembleRelease
     artifacts:
       - app/build/outputs/apk/release/*.apk
-    scripts:
+    brouser-scripts:
       - name: MANUAL Upload APK to BrowserStack
         script: |
           response=$(curl -u "balajiabiraman_dhEuiL:f8xXkagrkJzDBMDi1bJQ" \
