@@ -1,7 +1,7 @@
 userName: $userName
 accessKey: $accessKey
 framework: python
-app: $app
+app: $APP_URL
 platforms:
   - platformName: android
     deviceName: Samsung Galaxy S22 Ultra
