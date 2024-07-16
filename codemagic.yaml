@@ -15,7 +15,7 @@ workflows:
       - chmod +x ./gradlew
       - ./gradlew assembleRelease
       - name: Prepare BrowserStack Config
-      script: |
+        script: |
           sed -i "s/\${userName}/$userName/g; s/\${accessKey}/$accessKey/g" appium_tests/android/browserstack.yml
       - name: MANUAL Upload APK to BrowserStack
         script: |
