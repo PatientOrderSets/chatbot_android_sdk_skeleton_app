@@ -18,7 +18,7 @@ workflows:
         script: |
           sed -i '' -e "s/\${userName}/${userName}/g" appium_tests/android/browserstack.yml
           sed -i '' -e "s/\${accessKey}/${accessKey}/g" appium_tests/android/browserstack.yml
-      - name: MANUAL Upload APK to BrowserStack
+      - name: Upload APK to BrowserStack
         script: |
           apk_file=$(echo ./app/build/outputs/apk/release/*.apk)
           response=$(curl -u "${userName}:${accessKey}" \
