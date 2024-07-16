@@ -8,7 +8,7 @@ platforms:
     platformVersion: "12.0"
 interactiveDebugging : true
 browserstackLocal: false
-buildName: trc-skeleton-android
+buildName: trc-android-app
 projectName: TRC Skeleton
 buildIdentifier: ${BUILD_NUMBER}
 debug: true
