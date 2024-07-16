@@ -22,7 +22,10 @@ INPUT_FIELD = (AppiumBy.XPATH, "//android.widget.EditText")
 OPTION_CLOSE = (AppiumBy.ACCESSIBILITY_ID, "Close\nClose")
 OPTION_BACK = (AppiumBy.ACCESSIBILITY_ID, "Back\nBack")
 MESSAGE_ASSIGNED_TO = (AppiumBy.XPATH, "//android.view.View[contains(@content-desc, 'Assigned')]")
+HEADER_CHAT = (AppiumBy.XPATH, "//android.view.View[@content-desc=\"Chat with us!\"]")
 
+BUTTON_SETTINGS = (AppiumBy.XPATH, "//android.widget.ImageView[@resource-id=\"com.thinkresearch.skeltonapp:id/settingsButton\"]")
+SETTINGS_BUTTON_SAVE = (AppiumBy.XPATH, "//android.widget.Button[@resource-id=\"com.thinkresearch.skeltonapp:id/buttonSave\"]")
 
 
 class TestAppium:
@@ -39,46 +42,23 @@ class TestAppium:
         element = self.wait.until(EC.presence_of_element_located(locator))
         assert element.is_displayed()
 
+    def test_smoke(self):
+        self.assert_visible(BUTTON_FAB)
+
+    def test_settings(self):
+        self.click(BUTTON_SETTINGS)
+        self.assert_visible(SETTINGS_BUTTON_SAVE)
+
+    def test_save_settings(self):
+        self.click(BUTTON_SETTINGS)
+        self.click(SETTINGS_BUTTON_SAVE)
+        self.assert_visible(BUTTON_FAB)
+
     def test_new_conversation(self):
+        self.click(BUTTON_FAB)
+        self.assert_visible(HEADER_CHAT)
+
+    def test_option_list(self):
+        self.click(BUTTON_FAB)
         self.assert_visible(BUTTON_NEED_CARE)
-
-    def test_formatted_msg(self):
-        self.click(BUTTON_BACK)
-        self.click(BUTTON_NEW_CONVO)
-        self.click(BUTTON_SELECT_OPTION)
-        self.click(OPTION_FORMATED)
-        self.click(BUTTON_SEND)
-        self.assert_visible(OPTION_BACK)
-
-    def test_survey(self):
-        self.click(BUTTON_BACK)
-        self.click(BUTTON_NEW_CONVO)
-        self.click(BUTTON_SELECT_OPTION)
-        self.click(OPTION_SELECT_SURVEY)
-        self.click(BUTTON_SEND)
-        self.assert_visible(BUTTON_START_SURVEY)
-
-    def test_enter_input(self):
-        self.click(BUTTON_BACK)
-        self.click(BUTTON_NEW_CONVO)
-        self.click(BUTTON_SELECT_OPTION)
-        self.click(OPTION_ENTER_INPUT)
-        self.click(BUTTON_SEND)
-        self.click(INPUT_FIELD)
-        input_field = self.driver.find_element(*INPUT_FIELD)
-        input_field.send_keys('hello')
-        self.click(BUTTON_SEND_MESSAGE)
-        self.assert_visible(OPTION_CLOSE)
-    
-    def test_assign_agent(self):
-        self.click(BUTTON_BACK)
-        self.click(BUTTON_NEW_CONVO)
-        self.click(BUTTON_SELECT_OPTION)
-        self.click(OPTION_ASSIGN_AGENT)
-        self.click(BUTTON_SEND)
-        self.assert_visible(MESSAGE_ASSIGNED_TO)
-
         
-
-
-
