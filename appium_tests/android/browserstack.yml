@@ -1,5 +1,5 @@
-userName: $userName
-accessKey: $accessKey
+userName: ${userName}
+accessKey: ${accessKey}
 framework: python
 app: trc-skeleton-app
 platforms:
