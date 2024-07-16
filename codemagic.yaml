@@ -12,17 +12,14 @@ workflows:
         - pattern: '*'
           include: true
     scripts:
-      - script: 'echo "creds:${userName2}:${accessKey2}********"'
       - chmod +x ./gradlew
       - ./gradlew assembleRelease
       - name: MANUAL Upload APK to BrowserStack
         script: |
-          response=$(curl -u "${userName2}:${accessKey2}" \
+          response=$(curl -u "${userName}:${accessKey}" \
           -X POST "https://api-cloud.browserstack.com/app-automate/upload" \
           -F "file=@./appium_tests/android/Skelton App Final.apk" \
           -F "custom_id=trc-skeleton-app") 
-          echo "export APP_URL=$(echo $response | jq -r '.app_url')" > app_url.sh
-          echo $response > temp.sh
       - name: Install BrowserStack SDK and Run Tests
         script: |
           cd ./appium_tests/android
