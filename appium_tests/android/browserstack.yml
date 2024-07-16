@@ -1,7 +1,7 @@
 userName: ${userName}
 accessKey: ${accessKey}
 framework: python
-app: trc-skeleton-app
+app: trc-app-android
 platforms:
   - platformName: android
     deviceName: Samsung Galaxy S22 Ultra
