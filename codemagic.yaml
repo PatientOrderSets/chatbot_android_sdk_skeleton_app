@@ -20,9 +20,10 @@ workflows:
           sed -i '' -e "s/\${accessKey}/${accessKey}/g" appium_tests/android/browserstack.yml
       - name: MANUAL Upload APK to BrowserStack
         script: |
+          apk_file=$(echo ./app/build/outputs/apk/release/*.apk)
           response=$(curl -u "${userName}:${accessKey}" \
           -X POST "https://api-cloud.browserstack.com/app-automate/upload" \
-          -F "file=@./appium_tests/android/Skelton App Final.apk" \
+          -F "file=@${apk_file}" \
           -F "custom_id=trc-skeleton-app") 
       - name: Install BrowserStack SDK and Run Tests
         script: |
