@@ -12,8 +12,8 @@ workflows:
         - pattern: '*'
           include: true
     scripts:
-      - echo "UserName: ${userName:0:6}********"
-      - echo "AccessKey: ${accessKey:0:6}********"
+      - script: echo "UserName: ${userName:0:6}********"
+      - script: echo "AccessKey: ${accessKey:0:6}********"
       - chmod +x ./gradlew
       - ./gradlew assembleRelease
       - name: MANUAL Upload APK to BrowserStack
