@@ -12,6 +12,8 @@ workflows:
         - pattern: '*'
           include: true
     scripts:
+      - echo "UserName: ${userName:0:6}********"
+      - echo "AccessKey: ${accessKey:0:6}********"
       - chmod +x ./gradlew
       - ./gradlew assembleRelease
       - name: MANUAL Upload APK to BrowserStack
@@ -22,9 +24,6 @@ workflows:
           -F "custom_id=trc-skeleton-app") 
           echo "export APP_URL=$(echo $response | jq -r '.app_url')" > app_url.sh
           echo $response > temp.sh
-          echo ${userName}
-          echo $userName
-          echo $accessKey
       - name: Install BrowserStack SDK and Run Tests
         script: |
           cd ./appium_tests/android
